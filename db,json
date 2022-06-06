@@ -1,0 +1,29 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name":"John",
+            "role":"Voter",
+            "age":24,
+            "username":"johnny",
+            "password":"123456",
+            "token":"hadjh334bja-382kdjfks"
+        },
+        {
+            "id":2,
+            "name":"gandhi",
+            "role":"candidate",
+            "age":54,
+            "votes":2345,
+            "party":"partyA"
+        }, 
+        {
+            "name":"raju",
+            "role":"candidate",
+            "age":34,
+            "votes":7328,
+            "party":"partyB",
+            "id":"Kdfjsfs3902sdf-AfAGkfkjejk"
+        }
+    ]
+}
