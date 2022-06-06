@@ -91,7 +91,25 @@ app.get("/votes/voters",(req,res)=>{
     })
 })
 
-
+app.post("/votes/vote/:user",(req,res)=>{
+    let token = req.query.apikey
+    let user = req.params.user
+    if(!token){
+        return res.status(401).send("need apikey")
+    }
+    fs.readFile("./db.json","utf-8",(err,data)=>{
+        let parsed = JSON.parse(data)
+        parsed.users = parsed.users.map((el)=>{
+          if(el.name==user){
+            el.votes=el.votes+1
+          }
+          return el;
+        })
+        fs.writeFile("./db.json".JSON.stringify(parsed),"utf-8",()=>{
+            return res.send("vote increased")
+        })
+    })
+})
 app.post("/db",(req,res)=>{
     fs.readFile("./db.json","utf-8",(err,data)=>{
        const parsed = JSON.parse(data)
